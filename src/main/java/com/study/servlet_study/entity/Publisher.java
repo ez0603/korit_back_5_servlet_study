@@ -4,4 +4,5 @@ public class Publisher {
 	private int publisherId;
 	private String publisherName;
 	
+	
 }
