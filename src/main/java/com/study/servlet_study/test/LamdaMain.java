@@ -25,7 +25,7 @@ public class LamdaMain {
 		};
 		
 		Consumer<Author> print2 = (author) -> System.out.println(author); // 람다 = 추상메소드 무조건 1개 , 객체 생성 (익명클래스의 객체생성을 줄이는것) 
-		// -> 실행되는것 X , 정의되는것이다 / Consumer<Author> print2로 정의해주었기(메모리 주소의 형태가 정해져있기) 때문에 가능한것 ,  (author) -> 로 축약한것
+		// -> 실행(호출)되는것 X , 정의되는것이다 / Consumer<Author> print2로 정의해주었기(메모리 주소의 형태가 정해져있기) 때문에 가능한것 ,  (author) -> 로 축약한것
 		
 		print0.accept(Author.builder().authorId(1).authorName("김준일").build()); 
 		print1.accept(Author.builder().authorId(2).authorName("김준이").build()); 
