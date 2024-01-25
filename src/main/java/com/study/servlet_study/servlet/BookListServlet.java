@@ -2,6 +2,7 @@ package com.study.servlet_study.servlet;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.study.servlet_study.entity.Book;
 import com.study.servlet_study.service.BookService;
 
 @WebServlet("/books")
@@ -56,7 +58,11 @@ public class BookListServlet extends HttpServlet {
 			params.put("publisherName", publisherName);
 		}
 		
-		params.size();
+		List<Book> searchResult = bookService.searchGetBook(params);
+		
+		response.setContentType("text/plain");
+		response.setStatus(201);
+		response.getWriter().println(searchResult);
 		
 	}
 
